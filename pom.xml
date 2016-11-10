@@ -37,14 +37,13 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 	<packaging>jar</packaging>
 
 	<properties>
-		<bookPath>/ao-encoding/servlet</bookPath>
 		<shortTitle>Servlet</shortTitle>
 		<javadoc.breadcrumbs><![CDATA[<a target="_top" href="https://aoindustries.com/ao-encoding/">AO Encoding</a>
 / <a target="_top" href="${project.url}">${shortTitle}</a>]]></javadoc.breadcrumbs>
 	</properties>
 
 	<name>AO Encoding Servlet</name>
-	<url>https://aoindustries.com${bookPath}/</url><!-- Can't inherit due to multi-module -->
+	<url>https://aoindustries.com/ao-encoding/servlet/</url>
 	<description>High performance character encoding in a Servlet environment.</description>
 	<inceptionYear>2009</inceptionYear>
 
