@@ -35,6 +35,7 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 	<properties>
 		<!-- These values are copied from the project being documented -->
 		<documented.groupId>com.aoindustries</documented.groupId><documented.artifactId>ao-encoding-servlet</documented.artifactId>
+		<!-- TODO: Why is Java 1.6 listed here?  It is the default from parent POM? -->
 		<documented.javaVersion>1.6</documented.javaVersion>
 		<documented.javac.link.javaApi>${javac.link.javaApi.jdk16}</documented.javac.link.javaApi>
 		<documented.name>AO Encoding Servlet</documented.name>
