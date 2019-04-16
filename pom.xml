@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 ao-encoding-servlet - High performance character encoding in a Servlet environment.
-Copyright (C) 2016, 2017, 2018  AO Industries, Inc.
+Copyright (C) 2016, 2017, 2018, 2019  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -62,8 +62,8 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 							<links>
 								<link>${javac.link.javaApi}</link>
 								<link>${javac.link.javaeeApi.6}</link>
-								<link>https://aoindustries.com/ao-encoding/apidocs</link>
-								<link>https://aoindustries.com/aocode-public/apidocs</link>
+								<link>https://aoindustries.com/ao-encoding/apidocs/</link>
+								<link>https://aoindustries.com/aocode-public/apidocs/</link>
 							</links>
 						</configuration>
 					</plugin>
