@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-ao-encoding-servlet - High performance character encoding in a Servlet environment.
+ao-encoding-servlet - High performance streaming character encoding in a Servlet environment.
 Copyright (C) 2016, 2017, 2018, 2019  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
@@ -40,7 +40,7 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 
 	<name>AO Encoding Servlet</name>
 	<url>https://aoindustries.com/ao-encoding/servlet/</url>
-	<description>High performance character encoding in a Servlet environment.</description>
+	<description>High performance streaming character encoding in a Servlet environment.</description>
 	<inceptionYear>2009</inceptionYear>
 
 	<scm>

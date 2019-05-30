@@ -24,7 +24,7 @@
 	</a>
 </p>
 
-High performance character encoding in a Servlet environment.
+High performance streaming character encoding in a Servlet environment.
 
 ## Project Links
 * [Project Home](https://aoindustries.com/ao-encoding/servlet/)
