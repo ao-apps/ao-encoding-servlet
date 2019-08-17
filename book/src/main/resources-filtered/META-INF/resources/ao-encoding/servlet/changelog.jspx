@@ -51,7 +51,16 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 				groupId="@{documented.groupId}"
 				artifactId="@{documented.artifactId}"
 				scmUrl="@{documented.scm.url}"
-			/>
+			>
+				<ul>
+					<li>
+						No longer performs any <ao:a href="https://tools.ietf.org/html/rfc3987">RFC 3987: Internationalized Resource Identifiers (IRIs)</ao:a>
+						to <ao:a href="https://tools.ietf.org/html/rfc3986">RFC 3986: Uniform Resource Identifier (URI)</ao:a> conversions.
+						It is expected that this conversion will be done, as-needed,
+						by the servlet environment either directly or via servlet filters.
+					</li>
+				</ul>
+			</changelog:release>
 		</c:if>
 
 		<changelog:release

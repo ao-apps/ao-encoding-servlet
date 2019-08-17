@@ -23,8 +23,7 @@
 package com.aoindustries.encoding.servlet;
 
 import com.aoindustries.encoding.EncodingContext;
-import com.aoindustries.net.UrlUtils;
-import java.io.UnsupportedEncodingException;
+import com.aoindustries.servlet.http.ServletUtil;
 import javax.servlet.http.HttpServletResponse;
 
 /**
@@ -41,21 +40,10 @@ public class HttpServletResponseEncodingContext implements EncodingContext {
 	}
 
 	/**
-	 * Encodes the URL by:
-	 * <ol>
-	 * <li>Encoding the path elements with the current response character encoding.</li>
-	 * <li>Calling response.encodeURL()</li>
-	 * </ol>
-	 * @see  UrlUtils#encodeUrlPath(java.lang.String, java.lang.String)
-	 * @see  HttpServletResponse#encodeRedirectURL(java.lang.String)
+	 * Encodes the URL via {@link HttpServletResponse#encodeURL(java.lang.String)}.
 	 */
 	@Override
-	public String encodeURL(String href) throws UnsupportedEncodingException {
-		return response.encodeURL(
-			UrlUtils.encodeUrlPath(
-				href,
-				response.getCharacterEncoding()
-			)
-		);
+	public String encodeURL(String url) {
+		return response.encodeURL(url);
 	}
 }
