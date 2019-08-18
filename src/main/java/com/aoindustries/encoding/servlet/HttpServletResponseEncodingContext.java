@@ -40,10 +40,18 @@ public class HttpServletResponseEncodingContext implements EncodingContext {
 	}
 
 	/**
-	 * Encodes the URL via {@link HttpServletResponse#encodeURL(java.lang.String)}.
+	 * {@inheritDoc}
+	 * <p>
+	 * Encodes the URL via {@link ServletUtil#encodeURI(java.lang.String, javax.servlet.ServletResponse)} then {@link HttpServletResponse#encodeURL(java.lang.String)}.
+	 * </p>
+	 * <p>
+	 * TODO: Allow RFC 3987, too: Don't run through {@link ServletUtil#encodeURI(java.lang.String, javax.servlet.ServletResponse)}.
+	 * </p>
 	 */
 	@Override
 	public String encodeURL(String url) {
-		return response.encodeURL(url);
+		return response.encodeURL(
+			ServletUtil.encodeURI(url, response)
+		);
 	}
 }
