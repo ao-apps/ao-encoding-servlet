@@ -23,7 +23,7 @@
 package com.aoindustries.encoding.servlet;
 
 import com.aoindustries.encoding.EncodingContext;
-import com.aoindustries.servlet.http.ServletUtil;
+import com.aoindustries.servlet.ServletUtil;
 import javax.servlet.http.HttpServletResponse;
 
 /**
