@@ -23,7 +23,7 @@
 package com.aoindustries.encoding.servlet;
 
 import com.aoindustries.encoding.EncodingContext;
-import com.aoindustries.servlet.ServletUtil;
+import com.aoindustries.net.URIEncoder;
 import javax.servlet.http.HttpServletResponse;
 
 /**
@@ -42,16 +42,16 @@ public class HttpServletResponseEncodingContext implements EncodingContext {
 	/**
 	 * {@inheritDoc}
 	 * <p>
-	 * Encodes the URL via {@link ServletUtil#encodeURI(java.lang.String, javax.servlet.ServletResponse)} then {@link HttpServletResponse#encodeURL(java.lang.String)}.
+	 * Encodes the URL via {@link URIEncoder#encodeURI(java.lang.String)} then {@link HttpServletResponse#encodeURL(java.lang.String)}.
 	 * </p>
 	 * <p>
-	 * TODO: Allow RFC 3987, too: Don't run through {@link ServletUtil#encodeURI(java.lang.String, javax.servlet.ServletResponse)}.
+	 * TODO: Allow RFC 3987, too: Don't run through {@link URIEncoder#encodeURI(java.lang.String)}.
 	 * </p>
 	 */
 	@Override
 	public String encodeURL(String url) {
 		return response.encodeURL(
-			ServletUtil.encodeURI(url, response)
+			URIEncoder.encodeURI(url)
 		);
 	}
 }
