@@ -36,7 +36,7 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2016-10-29T20:12:35-0500"
-		dateModified="2019-08-18T01:33:40-0500"
+		dateModified="2019-10-04T05:33:54-0500"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.aoindustries:ao-encoding-servlet:pom.version}" />
@@ -53,14 +53,6 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 				scmUrl="@{documented.scm.url}"
 			>
 				<ul>
-					<!-- TODO:
-					<li>
-						No longer performs any <ao:a href="https://tools.ietf.org/html/rfc3987">RFC 3987: Internationalized Resource Identifiers (IRIs)</ao:a>
-						to <ao:a href="https://tools.ietf.org/html/rfc3986">RFC 3986: Uniform Resource Identifier (URI)</ao:a> conversions.
-						It is expected that this conversion will be done, as-needed,
-						by the servlet environment either directly or via servlet filters.
-					</li>
-					-->
 					<li>
 						<code>UrlValidator</code> now validates the entire URL versus
 						<ao:a href="https://tools.ietf.org/html/rfc3986">RFC 3986</ao:a>.

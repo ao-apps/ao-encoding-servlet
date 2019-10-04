@@ -44,9 +44,6 @@ public class HttpServletResponseEncodingContext implements EncodingContext {
 	 * <p>
 	 * Encodes the URL via {@link URIEncoder#encodeURI(java.lang.String)} then {@link HttpServletResponse#encodeURL(java.lang.String)}.
 	 * </p>
-	 * <p>
-	 * TODO: Allow RFC 3987, too: Don't run through {@link URIEncoder#encodeURI(java.lang.String)}.
-	 * </p>
 	 */
 	@Override
 	public String encodeURL(String url) {
