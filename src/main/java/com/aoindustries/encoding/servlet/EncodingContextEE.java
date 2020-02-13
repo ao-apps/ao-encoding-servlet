@@ -1,6 +1,6 @@
 /*
  * ao-encoding-servlet - High performance streaming character encoding in a Servlet environment.
- * Copyright (C) 2016, 2019  AO Industries, Inc.
+ * Copyright (C) 2016, 2019, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,8 +22,12 @@
  */
 package com.aoindustries.encoding.servlet;
 
+import com.aoindustries.encoding.Doctype;
 import com.aoindustries.encoding.EncodingContext;
+import com.aoindustries.encoding.Serialization;
 import com.aoindustries.net.URIEncoder;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
@@ -31,12 +35,20 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author  AO Industries, Inc.
  */
-public class HttpServletResponseEncodingContext implements EncodingContext {
+public class EncodingContextEE implements EncodingContext {
 
+	private final ServletContext servletContext;
+	private final HttpServletRequest request;
 	private final HttpServletResponse response;
 
-	public HttpServletResponseEncodingContext(HttpServletResponse response) {
+	public EncodingContextEE(ServletContext servletContext, HttpServletRequest request, HttpServletResponse response) {
+		this.servletContext = servletContext;
+		this.request = request;
 		this.response = response;
+	}
+
+	public EncodingContextEE(HttpServletRequest request, HttpServletResponse response) {
+		this(request.getServletContext(), request, response);
 	}
 
 	/**
@@ -50,5 +62,21 @@ public class HttpServletResponseEncodingContext implements EncodingContext {
 		return response.encodeURL(
 			URIEncoder.encodeURI(url)
 		);
+	}
+
+	/**
+	 * @see DoctypeEE
+	 */
+	@Override
+	public Doctype getDoctype() {
+		return DoctypeEE.get(servletContext, request);
+	}
+
+	/**
+	 * @see SerializationEE
+	 */
+	@Override
+	public Serialization getSerialization() {
+		return SerializationEE.get(servletContext, request);
 	}
 }
