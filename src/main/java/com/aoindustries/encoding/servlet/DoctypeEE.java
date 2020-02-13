@@ -23,7 +23,7 @@
 package com.aoindustries.encoding.servlet;
 
 import com.aoindustries.encoding.Doctype;
-import static com.aoindustries.encoding.Doctype.HTML5;
+import com.aoindustries.encoding.EncodingContext;
 import java.util.Locale;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletRequest;
@@ -43,7 +43,7 @@ public class DoctypeEE {
 
 	/**
 	 * Determines the default doctype by first checking for {@linkplain ServletContext#getInitParameter(java.lang.String) context-param}
-	 * of {@link #DEFAULT_INIT_PARAM}, the using {@link Doctype#HTML5} when unspecified or "default".
+	 * of {@link #DEFAULT_INIT_PARAM}, the using {@link EncodingContext#DEFAULT_DOCTYPE} when unspecified or "default".
 	 */
 	public static Doctype getDefault(ServletContext servletContext) {
 		String initParam = servletContext.getInitParameter(DEFAULT_INIT_PARAM);
@@ -53,7 +53,7 @@ public class DoctypeEE {
 				return Doctype.valueOf(initParam.toUpperCase(Locale.ROOT));
 			}
 		}
-		return HTML5;
+		return EncodingContext.DEFAULT_DOCTYPE;
 	}
 
 	private static final String REQUEST_ATTRIBUTE_NAME = Doctype.class.getName();
@@ -78,10 +78,10 @@ public class DoctypeEE {
 
 	/**
 	 * Gets the doctype in effect for the request, or {@linkplain #getDefault(javax.servlet.ServletContext) the default}
-	 * when not yet {@linkplain #set(javax.servlet.ServletRequest, com.aoindustries.html.Doctype) set}.
+	 * when not yet {@linkplain #set(javax.servlet.ServletRequest, com.aoindustries.encoding.Doctype) set}.
 	 * <p>
 	 * Once the default is resolved,
-	 * {@linkplain #set(javax.servlet.ServletRequest, com.aoindustries.html.Doctype) sets the request attribute}.
+	 * {@linkplain #set(javax.servlet.ServletRequest, com.aoindustries.encoding.Doctype) sets the request attribute}.
 	 * </p>
 	 */
 	public static Doctype get(ServletContext servletContext, ServletRequest request) {

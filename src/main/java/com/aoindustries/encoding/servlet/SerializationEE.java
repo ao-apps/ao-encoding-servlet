@@ -95,10 +95,10 @@ public class SerializationEE {
 
 	/**
 	 * Gets the serialization in effect for the request, or {@linkplain #getDefault(javax.servlet.ServletContext, javax.servlet.http.HttpServletRequest) the default}
-	 * when not yet {@linkplain #set(javax.servlet.ServletRequest, com.aoindustries.html.Serialization) set}.
+	 * when not yet {@linkplain #set(javax.servlet.ServletRequest, com.aoindustries.encoding.Serialization) set}.
 	 * <p>
 	 * Once the default is resolved,
-	 * {@linkplain #set(javax.servlet.ServletRequest, com.aoindustries.html.Serialization) sets the request attribute}.
+	 * {@linkplain #set(javax.servlet.ServletRequest, com.aoindustries.encoding.Serialization) sets the request attribute}.
 	 * </p>
 	 */
 	public static Serialization get(ServletContext servletContext, HttpServletRequest request) {
