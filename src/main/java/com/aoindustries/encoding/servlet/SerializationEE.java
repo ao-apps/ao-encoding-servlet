@@ -73,13 +73,13 @@ public class SerializationEE {
 		return getDefault(request.getServletContext(), request);
 	}
 
-	private static final String REQUEST_ATTRIBUTE_NAME = Serialization.class.getName();
+	private static final String REQUEST_ATTRIBUTE = Serialization.class.getName();
 
 	/**
 	 * Registers the serialization in effect for the request.
 	 */
 	public static void set(ServletRequest request, Serialization serialization) {
-		request.setAttribute(REQUEST_ATTRIBUTE_NAME, serialization);
+		request.setAttribute(REQUEST_ATTRIBUTE, serialization);
 	}
 
 	/**
@@ -88,8 +88,8 @@ public class SerializationEE {
 	 * @return  The previous attribute value, if any
 	 */
 	public static Serialization replace(ServletRequest request, Serialization serialization) {
-		Serialization old = (Serialization)request.getAttribute(REQUEST_ATTRIBUTE_NAME);
-		request.setAttribute(REQUEST_ATTRIBUTE_NAME, serialization);
+		Serialization old = (Serialization)request.getAttribute(REQUEST_ATTRIBUTE);
+		request.setAttribute(REQUEST_ATTRIBUTE, serialization);
 		return old;
 	}
 
@@ -102,10 +102,10 @@ public class SerializationEE {
 	 * </p>
 	 */
 	public static Serialization get(ServletContext servletContext, HttpServletRequest request) {
-		Serialization serialization = (Serialization)request.getAttribute(REQUEST_ATTRIBUTE_NAME);
+		Serialization serialization = (Serialization)request.getAttribute(REQUEST_ATTRIBUTE);
 		if(serialization == null) {
 			serialization = getDefault(servletContext, request);
-			request.setAttribute(REQUEST_ATTRIBUTE_NAME, serialization);
+			request.setAttribute(REQUEST_ATTRIBUTE, serialization);
 		}
 		return serialization;
 	}

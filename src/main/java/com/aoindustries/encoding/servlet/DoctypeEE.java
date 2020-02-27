@@ -56,13 +56,13 @@ public class DoctypeEE {
 		return EncodingContext.DEFAULT_DOCTYPE;
 	}
 
-	private static final String REQUEST_ATTRIBUTE_NAME = Doctype.class.getName();
+	private static final String REQUEST_ATTRIBUTE = Doctype.class.getName();
 
 	/**
 	 * Registers the doctype in effect for the request.
 	 */
 	public static void set(ServletRequest request, Doctype doctype) {
-		request.setAttribute(REQUEST_ATTRIBUTE_NAME, doctype);
+		request.setAttribute(REQUEST_ATTRIBUTE, doctype);
 	}
 
 	/**
@@ -71,8 +71,8 @@ public class DoctypeEE {
 	 * @return  The previous attribute value, if any
 	 */
 	public static Doctype replace(ServletRequest request, Doctype doctype) {
-		Doctype old = (Doctype)request.getAttribute(REQUEST_ATTRIBUTE_NAME);
-		request.setAttribute(REQUEST_ATTRIBUTE_NAME, doctype);
+		Doctype old = (Doctype)request.getAttribute(REQUEST_ATTRIBUTE);
+		request.setAttribute(REQUEST_ATTRIBUTE, doctype);
 		return old;
 	}
 
@@ -85,10 +85,10 @@ public class DoctypeEE {
 	 * </p>
 	 */
 	public static Doctype get(ServletContext servletContext, ServletRequest request) {
-		Doctype doctype = (Doctype)request.getAttribute(REQUEST_ATTRIBUTE_NAME);
+		Doctype doctype = (Doctype)request.getAttribute(REQUEST_ATTRIBUTE);
 		if(doctype == null) {
 			doctype = getDefault(servletContext);
-			request.setAttribute(REQUEST_ATTRIBUTE_NAME, doctype);
+			request.setAttribute(REQUEST_ATTRIBUTE, doctype);
 		}
 		return doctype;
 	}
