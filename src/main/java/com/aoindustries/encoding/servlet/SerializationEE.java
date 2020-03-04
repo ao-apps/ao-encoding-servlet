@@ -32,6 +32,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * @author  AO Industries, Inc.
  */
+// TODO: Set default as ServletRequestListener?
 public class SerializationEE {
 
 	// Make no instances
