@@ -32,7 +32,7 @@ import javax.servlet.ServletRequest;
  * @author  AO Industries, Inc.
  */
 // TODO: Set default as ServletRequestListener?
-public class DoctypeEE {
+final public class DoctypeEE {
 
 	// Make no instances
 	private DoctypeEE() {}
@@ -97,6 +97,7 @@ public class DoctypeEE {
 	/**
 	 * @see #get(javax.servlet.ServletContext, javax.servlet.ServletRequest)
 	 */
+	// TODO: Remove this?
 	public static Doctype get(ServletRequest request) {
 		return get(request.getServletContext(), request);
 	}

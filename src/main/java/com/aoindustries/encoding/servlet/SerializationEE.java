@@ -33,7 +33,7 @@ import javax.servlet.http.HttpServletRequest;
  * @author  AO Industries, Inc.
  */
 // TODO: Set default as ServletRequestListener?
-public class SerializationEE {
+final public class SerializationEE {
 
 	// Make no instances
 	private SerializationEE() {}
@@ -114,6 +114,7 @@ public class SerializationEE {
 	/**
 	 * @see #get(javax.servlet.ServletContext, javax.servlet.http.HttpServletRequest)
 	 */
+	// TODO: Remove this?
 	public static Serialization get(HttpServletRequest request) {
 		return get(request.getServletContext(), request);
 	}
