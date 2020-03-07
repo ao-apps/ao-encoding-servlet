@@ -37,7 +37,7 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2016-10-29T20:12:35-0500"
-		dateModified="2020-02-13T12:37:28-0600"
+		dateModified="2020-03-07T06:01:29-0600"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.aoindustries:ao-encoding-servlet:pom.version}" />
@@ -49,12 +49,16 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 			<changelog:release
 				projectName="@{documented.name}"
 				version="#{version}"
-				groupId="@{documented.groupId}"
+				groupId="@{project.groupId}"
 				artifactId="@{documented.artifactId}"
-				scmUrl="@{documented.scm.url}"
+				scmUrl="@{project.scm.url}"
 			>
 				<ul>
 					<li>Minimum Java version changed from 1.7 to 1.8.</li>
+					<li>
+						Reduced use of property substitutions in <code>pom.xml</code>.
+						This is to help 3rd-party parsers that fail to perform full Maven-compatible substitutions.
+					</li>
 					<li>
 						<code>HttpServletResponseEncodingContext</code> renamed to
 						<code>EncodingContextEE</code>, and requires both request and response
@@ -94,9 +98,9 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 			projectName="@{documented.name}"
 			version="2.0.0"
 			datePublished="2019-10-04T06:10:13-0500"
-			groupId="@{documented.groupId}"
+			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
-			scmUrl="@{documented.scm.url}"
+			scmUrl="@{project.scm.url}"
 		>
 			<ul>
 				<li>
@@ -110,9 +114,9 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 			projectName="@{documented.name}"
 			version="1.3.4"
 			datePublished="2019-06-19T06:43:46-0500"
-			groupId="@{documented.groupId}"
+			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
-			scmUrl="@{documented.scm.url}"
+			scmUrl="@{project.scm.url}"
 		>
 			<ul>
 				<li>Minimum Java version changed from 1.6 to 1.7.</li>
@@ -129,9 +133,9 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 			projectName="@{documented.name}"
 			version="1.3.3"
 			datePublished="2017-07-19T20:06:27-0500"
-			groupId="@{documented.groupId}"
+			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
-			scmUrl="@{documented.scm.url}"
+			scmUrl="@{project.scm.url}"
 		>
 			<ul>
 				<li>Updated dependencies.</li>
@@ -142,9 +146,9 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 			projectName="@{documented.name}"
 			version="1.3.2"
 			datePublished="2016-11-15T11:37:30-0600"
-			groupId="@{documented.groupId}"
+			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
-			scmUrl="@{documented.scm.url}"
+			scmUrl="@{project.scm.url}"
 		>
 			<ul>
 				<li>New <core:link book="/ao-oss-parent" page="/index.jspx" /> POM to simplify <code>pom.xml</code> files.</li>
@@ -157,9 +161,9 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 			projectName="@{documented.name}"
 			version="1.3.1"
 			datePublished="2016-10-20T17:56:00-0500"
-			groupId="@{documented.groupId}"
+			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
-			scmUrl="@{documented.scm.url}"
+			scmUrl="@{project.scm.url}"
 		>
 			<ul>
 				<li>Improved Javadoc formatting.</li>
@@ -171,9 +175,9 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 			projectName="@{documented.name}"
 			version="1.3.0"
 			datePublished="2016-10-04T19:42:00-0500"
-			groupId="@{documented.groupId}"
+			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
-			scmUrl="@{documented.scm.url}"
+			scmUrl="@{project.scm.url}"
 		>
 			<ul>
 				<li>Improved Javadoc formatting.</li>
@@ -184,9 +188,9 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 			projectName="@{documented.name}"
 			version="1.2.1"
 			datePublished="2016-09-02T16:40:00-0500"
-			groupId="@{documented.groupId}"
+			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
-			scmUrl="@{documented.scm.url}"
+			scmUrl="@{project.scm.url}"
 		>
 			<ul>
 				<li>Improved Maven configuration for Java EE 6 dependencies.</li>
@@ -197,9 +201,9 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 			projectName="@{documented.name}"
 			version="1.2"
 			datePublished="2016-08-19T14:16:00-0500"
-			groupId="@{documented.groupId}"
+			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
-			scmUrl="@{documented.scm.url}"
+			scmUrl="@{project.scm.url}"
 		>
 			<ul>
 				<li>Improved Javadoc formatting.</li>
@@ -210,9 +214,9 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 			projectName="@{documented.name}"
 			version="1.1"
 			datePublished="2016-08-07T23:23:00-0500"
-			groupId="@{documented.groupId}"
+			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
-			scmUrl="@{documented.scm.url}"
+			scmUrl="@{project.scm.url}"
 		>
 			<ul>
 				<li>Reverted to Java 1.6 for Android and Java EE 6 compatibility.</li>
@@ -223,9 +227,9 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 			projectName="@{documented.name}"
 			version="1.0"
 			datePublished="2016-08-05T16:27:00-0500"
-			groupId="@{documented.groupId}"
+			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
-			scmUrl="@{documented.scm.url}"
+			scmUrl="@{project.scm.url}"
 		>
 			<ul>
 				<li>Project moved to GitHub and Maven.</li>
