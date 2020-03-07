@@ -65,7 +65,7 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 						in order to provide current <code>Doctype</code> and <code>Serialization</code>.
 					</li>
 					<li>
-						New <ao:a rel="nofollow" href="@{javac.link.javaeeApi.6}javax/servlet/ServletContext.html#getInitParameter(java.lang.String)">context-param</ao:a>
+						New <ao:a rel="nofollow" href="@{javadoc.link.javaee}javax/servlet/ServletContext.html#getInitParameter(java.lang.String)">context-param</ao:a>
 						<code>com.aoindustries.encoding.Serialization.default</code>
 						that allows an application to control the selection of HTML versus XHTML.
 						Supports three values:
@@ -82,7 +82,7 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 					<li>
 						New method <code>DoctypeEE.getDefault(…)</code> that provides the default
 						doctype for an application.  First checks
-						<ao:a rel="nofollow" href="@{javac.link.javaeeApi.6}javax/servlet/ServletContext.html#getInitParameter(java.lang.String)">context-param</ao:a>
+						<ao:a rel="nofollow" href="@{javadoc.link.javaee}javax/servlet/ServletContext.html#getInitParameter(java.lang.String)">context-param</ao:a>
 						<code>com.aoindustries.encoding.Doctype.default</code>,
 						then defaults to "HTML5" when not present, empty, or "default".
 					</li>
