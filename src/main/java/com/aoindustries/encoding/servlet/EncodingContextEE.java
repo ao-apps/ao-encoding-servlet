@@ -47,10 +47,6 @@ public class EncodingContextEE implements EncodingContext {
 		this.response = response;
 	}
 
-	public EncodingContextEE(HttpServletRequest request, HttpServletResponse response) {
-		this(request.getServletContext(), request, response);
-	}
-
 	/**
 	 * {@inheritDoc}
 	 * <p>

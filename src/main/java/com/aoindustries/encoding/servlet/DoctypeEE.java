@@ -91,12 +91,4 @@ final public class DoctypeEE {
 		}
 		return doctype;
 	}
-
-	/**
-	 * @see #get(javax.servlet.ServletContext, javax.servlet.ServletRequest)
-	 */
-	// TODO: Remove this?
-	public static Doctype get(ServletRequest request) {
-		return get(request.getServletContext(), request);
-	}
 }

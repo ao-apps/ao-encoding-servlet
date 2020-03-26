@@ -66,13 +66,6 @@ final public class SerializationEE {
 		return Serialization.select(request.getHeaders("Accept"));
 	}
 
-	/**
-	 * @see #getDefault(javax.servlet.ServletContext, javax.servlet.http.HttpServletRequest)
-	 */
-	public static Serialization getDefault(HttpServletRequest request) {
-		return getDefault(request.getServletContext(), request);
-	}
-
 	private static final String REQUEST_ATTRIBUTE = Serialization.class.getName();
 
 	/**
@@ -108,13 +101,5 @@ final public class SerializationEE {
 			request.setAttribute(REQUEST_ATTRIBUTE, serialization);
 		}
 		return serialization;
-	}
-
-	/**
-	 * @see #get(javax.servlet.ServletContext, javax.servlet.http.HttpServletRequest)
-	 */
-	// TODO: Remove this?
-	public static Serialization get(HttpServletRequest request) {
-		return get(request.getServletContext(), request);
 	}
 }
