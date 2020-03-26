@@ -30,7 +30,6 @@ import javax.servlet.ServletRequest;
 /**
  * @author  AO Industries, Inc.
  */
-// TODO: Set default as ServletRequestListener?
 final public class DoctypeEE {
 
 	// Make no instances
