@@ -23,7 +23,6 @@
 package com.aoindustries.encoding.servlet;
 
 import com.aoindustries.encoding.Doctype;
-import com.aoindustries.encoding.EncodingContext;
 import java.util.Locale;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletRequest;
@@ -44,7 +43,7 @@ final public class DoctypeEE {
 
 	/**
 	 * Determines the default doctype by first checking for {@linkplain ServletContext#getInitParameter(java.lang.String) context-param}
-	 * of {@link #DEFAULT_INIT_PARAM}, the using {@link EncodingContext#DEFAULT_DOCTYPE} when unspecified or "default".
+	 * of {@link #DEFAULT_INIT_PARAM}, the using {@link Doctype#DEFAULT} when unspecified or "default".
 	 */
 	public static Doctype getDefault(ServletContext servletContext) {
 		String initParam = servletContext.getInitParameter(DEFAULT_INIT_PARAM);
@@ -54,7 +53,7 @@ final public class DoctypeEE {
 				return Doctype.valueOf(initParam.toUpperCase(Locale.ROOT));
 			}
 		}
-		return EncodingContext.DEFAULT_DOCTYPE;
+		return Doctype.DEFAULT;
 	}
 
 	private static final String REQUEST_ATTRIBUTE = Doctype.class.getName();
