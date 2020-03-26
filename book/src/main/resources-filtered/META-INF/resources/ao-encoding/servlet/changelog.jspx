@@ -37,7 +37,7 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2016-10-29T20:12:35-0500"
-		dateModified="2020-03-07T06:01:29-0600"
+		dateModified="2020-03-26T18:35:11-05:00"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.aoindustries:ao-encoding-servlet:pom.version}" />
@@ -52,47 +52,56 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 				groupId="@{project.groupId}"
 				artifactId="@{documented.artifactId}"
 				scmUrl="@{project.scm.url}"
-			>
-				<ul>
-					<li>Minimum Java version changed from 1.7 to 1.8.</li>
-					<li>
-						Reduced use of property substitutions in <code>pom.xml</code>.
-						This is to help 3rd-party parsers that fail to perform full Maven-compatible substitutions.
-					</li>
-					<li>
-						<code>HttpServletResponseEncodingContext</code> renamed to
-						<code>EncodingContextEE</code>, and requires both request and response
-						in order to provide current <code>Doctype</code> and <code>Serialization</code>.
-					</li>
-					<li>
-						New <ao:a rel="nofollow" href="@{javadoc.link.javaee}javax/servlet/ServletContext.html#getInitParameter(java.lang.String)">context-param</ao:a>
-						<code>com.aoindustries.encoding.Serialization.default</code>
-						that allows an application to control the selection of HTML versus XHTML.
-						Supports three values:
-						<ul>
-							<li><code>SGML</code> - Use HTML always</li>
-							<li><code>XML</code> - Use XHTML always</li>
-							<li><code>auto</code> - (default) - Automatically choose based on the client's <code>Accept</code> header</li>
-						</ul>
-					</li>
-					<li>
-						New methods <code>SerializationEE.set(…)</code> and <code>SerializationEE.get(…)</code> that allow
-						the registration of the serialization in effect on the request.
-					</li>
-					<li>
-						New method <code>DoctypeEE.getDefault(…)</code> that provides the default
-						doctype for an application.  First checks
-						<ao:a rel="nofollow" href="@{javadoc.link.javaee}javax/servlet/ServletContext.html#getInitParameter(java.lang.String)">context-param</ao:a>
-						<code>com.aoindustries.encoding.Doctype.default</code>,
-						then defaults to "HTML5" when not present, empty, or "default".
-					</li>
-					<li>
-						New methods <code>Doctype.set(…)</code> and <code>Doctype.get(…)</code> that allow
-						the registration of the doctype in effect on the request.
-					</li>
-				</ul>
-			</changelog:release>
+			/>
 		</c:if>
+
+		<changelog:release
+			projectName="@{documented.name}"
+			version="3.0.0"
+			datePublished="2020-03-26T18:35:11-05:00"
+			groupId="@{project.groupId}"
+			artifactId="@{documented.artifactId}"
+			scmUrl="@{project.scm.url}"
+		>
+			<ul>
+				<li>Minimum Java version changed from 1.7 to 1.8.</li>
+				<li>
+					Reduced use of property substitutions in <code>pom.xml</code>.
+					This is to help 3rd-party parsers that fail to perform full Maven-compatible substitutions.
+				</li>
+				<li>
+					<code>HttpServletResponseEncodingContext</code> renamed to
+					<code>EncodingContextEE</code>, and requires both request and response
+					in order to provide current <code>Doctype</code> and <code>Serialization</code>.
+				</li>
+				<li>
+					New <ao:a rel="nofollow" href="@{javadoc.link.javaee}javax/servlet/ServletContext.html#getInitParameter(java.lang.String)">context-param</ao:a>
+					<code>com.aoindustries.encoding.Serialization.default</code>
+					that allows an application to control the selection of HTML versus XHTML.
+					Supports three values:
+					<ul>
+						<li><code>SGML</code> - Use HTML always</li>
+						<li><code>XML</code> - Use XHTML always</li>
+						<li><code>auto</code> - (default) - Automatically choose based on the client's <code>Accept</code> header</li>
+					</ul>
+				</li>
+				<li>
+					New methods <code>SerializationEE.set(…)</code> and <code>SerializationEE.get(…)</code> that allow
+					the registration of the serialization in effect on the request.
+				</li>
+				<li>
+					New method <code>DoctypeEE.getDefault(…)</code> that provides the default
+					doctype for an application.  First checks
+					<ao:a rel="nofollow" href="@{javadoc.link.javaee}javax/servlet/ServletContext.html#getInitParameter(java.lang.String)">context-param</ao:a>
+					<code>com.aoindustries.encoding.Doctype.default</code>,
+					then defaults to "HTML5" when not present, empty, or "default".
+				</li>
+				<li>
+					New methods <code>Doctype.set(…)</code> and <code>Doctype.get(…)</code> that allow
+					the registration of the doctype in effect on the request.
+				</li>
+			</ul>
+		</changelog:release>
 
 		<changelog:release
 			projectName="@{documented.name}"
