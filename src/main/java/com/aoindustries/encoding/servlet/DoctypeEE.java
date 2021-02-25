@@ -1,6 +1,6 @@
 /*
  * ao-encoding-servlet - High performance streaming character encoding in a Servlet environment.
- * Copyright (C) 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -42,7 +42,7 @@ final public class DoctypeEE {
 
 	/**
 	 * Determines the default doctype by first checking for {@linkplain ServletContext#getInitParameter(java.lang.String) context-param}
-	 * of {@link #DEFAULT_INIT_PARAM}, the using {@link Doctype#DEFAULT} when unspecified or "default".
+	 * of {@link #DEFAULT_INIT_PARAM}, then using {@link Doctype#DEFAULT} when unspecified or "default".
 	 */
 	public static Doctype getDefault(ServletContext servletContext) {
 		String initParam = servletContext.getInitParameter(DEFAULT_INIT_PARAM);
