@@ -20,9 +20,9 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.aoindustries.encoding.servlet;
+package com.aoapps.encoding.servlet;
 
-import com.aoindustries.encoding.Doctype;
+import com.aoapps.encoding.Doctype;
 import java.util.Locale;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletRequest;
@@ -77,10 +77,10 @@ final public class DoctypeEE {
 
 	/**
 	 * Gets the doctype in effect for the request, or {@linkplain #getDefault(javax.servlet.ServletContext) the default}
-	 * when not yet {@linkplain #set(javax.servlet.ServletRequest, com.aoindustries.encoding.Doctype) set}.
+	 * when not yet {@linkplain #set(javax.servlet.ServletRequest, com.aoapps.encoding.Doctype) set}.
 	 * <p>
 	 * Once the default is resolved,
-	 * {@linkplain #set(javax.servlet.ServletRequest, com.aoindustries.encoding.Doctype) sets the request attribute}.
+	 * {@linkplain #set(javax.servlet.ServletRequest, com.aoapps.encoding.Doctype) sets the request attribute}.
 	 * </p>
 	 */
 	public static Doctype get(ServletContext servletContext, ServletRequest request) {

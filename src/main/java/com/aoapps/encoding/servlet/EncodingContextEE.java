@@ -20,12 +20,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.aoindustries.encoding.servlet;
+package com.aoapps.encoding.servlet;
 
-import com.aoindustries.encoding.Doctype;
-import com.aoindustries.encoding.EncodingContext;
-import com.aoindustries.encoding.Serialization;
-import com.aoindustries.net.URIEncoder;
+import com.aoapps.encoding.Doctype;
+import com.aoapps.encoding.EncodingContext;
+import com.aoapps.encoding.Serialization;
+import com.aoapps.net.URIEncoder;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
