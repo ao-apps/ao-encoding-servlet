@@ -37,7 +37,7 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2016-10-29T20:12:35-05:00"
-		dateModified="2021-07-04T23:06:59-05:00"
+		dateModified="2021-09-25T23:27:50-05:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -130,7 +130,7 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 			<ul>
 				<li>
 					<code>UrlValidator</code> now validates the entire URL versus
-					<ao:a href="https://tools.ietf.org/html/rfc3986">RFC 3986</ao:a>.
+					<ao:a href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</ao:a>.
 				</li>
 			</ul>
 		</changelog:release>
