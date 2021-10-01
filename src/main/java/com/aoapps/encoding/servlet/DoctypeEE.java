@@ -23,6 +23,8 @@
 package com.aoapps.encoding.servlet;
 
 import com.aoapps.encoding.Doctype;
+import com.aoapps.servlet.attribute.AttributeEE;
+import com.aoapps.servlet.attribute.ScopeEE;
 import java.util.Locale;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletRequest;
@@ -55,13 +57,14 @@ final public class DoctypeEE {
 		return Doctype.DEFAULT;
 	}
 
-	private static final String REQUEST_ATTRIBUTE = Doctype.class.getName();
+	private static final ScopeEE.Request.Attribute<Doctype> REQUEST_ATTRIBUTE =
+		ScopeEE.REQUEST.attribute(Doctype.class.getName());
 
 	/**
 	 * Registers the doctype in effect for the request.
 	 */
 	public static void set(ServletRequest request, Doctype doctype) {
-		request.setAttribute(REQUEST_ATTRIBUTE, doctype);
+		REQUEST_ATTRIBUTE.context(request).set(doctype);
 	}
 
 	/**
@@ -70,8 +73,9 @@ final public class DoctypeEE {
 	 * @return  The previous attribute value, if any
 	 */
 	public static Doctype replace(ServletRequest request, Doctype doctype) {
-		Doctype old = (Doctype)request.getAttribute(REQUEST_ATTRIBUTE);
-		request.setAttribute(REQUEST_ATTRIBUTE, doctype);
+		AttributeEE.Request<Doctype> attribute = REQUEST_ATTRIBUTE.context(request);
+		Doctype old = attribute.get();
+		attribute.set(doctype);
 		return old;
 	}
 
@@ -84,10 +88,11 @@ final public class DoctypeEE {
 	 * </p>
 	 */
 	public static Doctype get(ServletContext servletContext, ServletRequest request) {
-		Doctype doctype = (Doctype)request.getAttribute(REQUEST_ATTRIBUTE);
+		AttributeEE.Request<Doctype> attribute = REQUEST_ATTRIBUTE.context(request);
+		Doctype doctype = attribute.get();
 		if(doctype == null) {
 			doctype = getDefault(servletContext);
-			request.setAttribute(REQUEST_ATTRIBUTE, doctype);
+			attribute.set(doctype);
 		}
 		return doctype;
 	}

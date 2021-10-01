@@ -25,6 +25,8 @@ package com.aoapps.encoding.servlet;
 import com.aoapps.encoding.Serialization;
 import static com.aoapps.encoding.Serialization.SGML;
 import static com.aoapps.encoding.Serialization.XML;
+import com.aoapps.servlet.attribute.AttributeEE;
+import com.aoapps.servlet.attribute.ScopeEE;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
@@ -66,13 +68,14 @@ final public class SerializationEE {
 		return Serialization.select(request.getHeaders("Accept"));
 	}
 
-	private static final String REQUEST_ATTRIBUTE = Serialization.class.getName();
+	private static final ScopeEE.Request.Attribute<Serialization> REQUEST_ATTRIBUTE =
+		ScopeEE.REQUEST.attribute(Serialization.class.getName());
 
 	/**
 	 * Registers the serialization in effect for the request.
 	 */
 	public static void set(ServletRequest request, Serialization serialization) {
-		request.setAttribute(REQUEST_ATTRIBUTE, serialization);
+		REQUEST_ATTRIBUTE.context(request).set(serialization);
 	}
 
 	/**
@@ -81,8 +84,9 @@ final public class SerializationEE {
 	 * @return  The previous attribute value, if any
 	 */
 	public static Serialization replace(ServletRequest request, Serialization serialization) {
-		Serialization old = (Serialization)request.getAttribute(REQUEST_ATTRIBUTE);
-		request.setAttribute(REQUEST_ATTRIBUTE, serialization);
+		AttributeEE.Request<Serialization> attribute = REQUEST_ATTRIBUTE.context(request);
+		Serialization old = attribute.get();
+		attribute.set(serialization);
 		return old;
 	}
 
@@ -95,10 +99,11 @@ final public class SerializationEE {
 	 * </p>
 	 */
 	public static Serialization get(ServletContext servletContext, HttpServletRequest request) {
-		Serialization serialization = (Serialization)request.getAttribute(REQUEST_ATTRIBUTE);
+		AttributeEE.Request<Serialization> attribute = REQUEST_ATTRIBUTE.context(request);
+		Serialization serialization = attribute.get();
 		if(serialization == null) {
 			serialization = getDefault(servletContext, request);
-			request.setAttribute(REQUEST_ATTRIBUTE, serialization);
+			attribute.set(serialization);
 		}
 		return serialization;
 	}
