@@ -34,7 +34,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * @author  AO Industries, Inc.
  */
-final public class SerializationEE {
+public final class SerializationEE {
 
 	// Make no instances
 	private SerializationEE() {}

@@ -32,7 +32,7 @@ import javax.servlet.ServletRequest;
 /**
  * @author  AO Industries, Inc.
  */
-final public class DoctypeEE {
+public final class DoctypeEE {
 
 	// Make no instances
 	private DoctypeEE() {}
