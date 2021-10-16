@@ -29,7 +29,7 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
-	<groupId>com.aoapps</groupId><artifactId>ao-encoding-servlet</artifactId><version>4.1.0</version>
+	<groupId>com.aoapps</groupId><artifactId>ao-encoding-servlet</artifactId><version>4.1.0-POST-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 
 	<properties>
@@ -84,7 +84,7 @@ along with ao-encoding-servlet.  If not, see <http://www.gnu.org/licenses />.
 		<connection>scm:git:git://github.com/ao-apps/ao-encoding-servlet.git</connection>
 		<developerConnection>scm:git:git@github.com:ao-apps/ao-encoding-servlet.git</developerConnection>
 		<url>https://github.com/ao-apps/ao-encoding-servlet</url>
-		<tag>ao-encoding-servlet-4.1.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
