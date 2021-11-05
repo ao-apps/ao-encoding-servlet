@@ -34,10 +34,10 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * @author  AO Industries, Inc.
  */
-public final class SerializationEE {
+public abstract class SerializationEE {
 
-	// Make no instances
-	private SerializationEE() {}
+	/** Make no instances. */
+	private SerializationEE() {throw new AssertionError();}
 
 	/**
 	 * Context init parameter that may be used to configure the use of XHTML within an application.

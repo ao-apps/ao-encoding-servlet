@@ -32,10 +32,10 @@ import javax.servlet.ServletRequest;
 /**
  * @author  AO Industries, Inc.
  */
-public final class DoctypeEE {
+public abstract class DoctypeEE {
 
-	// Make no instances
-	private DoctypeEE() {}
+	/** Make no instances. */
+	private DoctypeEE() {throw new AssertionError();}
 
 	/**
 	 * Context init parameter that may be used to configure the default doctype within an application.
