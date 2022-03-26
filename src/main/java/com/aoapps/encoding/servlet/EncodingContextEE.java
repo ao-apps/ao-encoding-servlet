@@ -1,6 +1,6 @@
 /*
  * ao-encoding-servlet - High performance streaming character encoding in a Servlet environment.
- * Copyright (C) 2016, 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2016, 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,7 +26,9 @@ import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.EncodingContext;
 import com.aoapps.encoding.Serialization;
 import com.aoapps.net.URIEncoder;
+import java.nio.charset.Charset;
 import javax.servlet.ServletContext;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -35,17 +37,51 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author  AO Industries, Inc.
  */
-// TODO: Lookup once and cached?  If so, see what extends and does this already
 public class EncodingContextEE implements EncodingContext {
 
-	private final ServletContext servletContext;
-	private final HttpServletRequest request;
 	private final HttpServletResponse response;
+	private final Doctype doctype;
+	private final Serialization serialization;
+	private final Charset characterEncoding;
 
-	public EncodingContextEE(ServletContext servletContext, HttpServletRequest request, HttpServletResponse response) {
-		this.servletContext = servletContext;
-		this.request = request;
+	/**
+	 * Uses the provided doctype, serialization, and character encoding.
+	 * <p>
+	 * Changes on request or response will not be detected and should not be done.  Please ensure doctype, serialization,
+	 * and encoding are all set on the request and response.
+	 * </p>
+	 */
+	public EncodingContextEE(
+		Doctype doctype,
+		Serialization serialization,
+		Charset characterEncoding,
+		HttpServletResponse response
+	) {
 		this.response = response;
+		this.doctype = doctype;
+		this.serialization = serialization;
+		this.characterEncoding = characterEncoding;
+	}
+
+	/**
+	 * The values for {@link Doctype}, {@link Serialization}, and {@link Charset} are only looked-up once and cached.
+	 * <p>
+	 * Changes on request or response will not be detected and should not be done.  Please ensure doctype, serialization,
+	 * and encoding are all set on the request and response.
+	 * </p>
+	 *
+	 * @see  DoctypeEE#get(javax.servlet.ServletContext, javax.servlet.ServletRequest)
+	 * @see  SerializationEE#get(javax.servlet.ServletContext, javax.servlet.http.HttpServletRequest)
+	 * @see  ServletResponse#getCharacterEncoding()
+	 * @see  Charset#forName(java.lang.String)
+	 */
+	public EncodingContextEE(ServletContext servletContext, HttpServletRequest request, HttpServletResponse response) {
+		this(
+			DoctypeEE.get(servletContext, request),
+			SerializationEE.get(servletContext, request),
+			Charset.forName(response.getCharacterEncoding()),
+			response
+		);
 	}
 
 	/**
@@ -62,18 +98,35 @@ public class EncodingContextEE implements EncodingContext {
 	}
 
 	/**
-	 * @see DoctypeEE
+	 * {@inheritDoc}
+	 * <p>
+	 * Uses the cached value from construction time.
+	 * </p>
 	 */
 	@Override
 	public Doctype getDoctype() {
-		return DoctypeEE.get(servletContext, request);
+		return doctype;
 	}
 
 	/**
-	 * @see SerializationEE
+	 * {@inheritDoc}
+	 * <p>
+	 * Uses the cached value from construction time.
+	 * </p>
 	 */
 	@Override
 	public Serialization getSerialization() {
-		return SerializationEE.get(servletContext, request);
+		return serialization;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Uses the cached value from construction time.
+	 * </p>
+	 */
+	@Override
+	public Charset getCharacterEncoding() {
+		return characterEncoding;
 	}
 }
