@@ -40,94 +40,94 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class EncodingContextEE implements EncodingContext {
 
-	private final HttpServletResponse response;
-	private final Doctype doctype;
-	private final Serialization serialization;
-	private final Charset characterEncoding;
+  private final HttpServletResponse response;
+  private final Doctype doctype;
+  private final Serialization serialization;
+  private final Charset characterEncoding;
 
-	/**
-	 * Uses the provided doctype, serialization, and character encoding.
-	 * <p>
-	 * Changes on request or response will not be detected and should not be done.  Please ensure doctype, serialization,
-	 * and encoding are all set on the request and response.
-	 * </p>
-	 */
-	public EncodingContextEE(
-		Doctype doctype,
-		Serialization serialization,
-		Charset characterEncoding,
-		HttpServletResponse response
-	) {
-		this.response = response;
-		this.doctype = doctype;
-		this.serialization = serialization;
-		this.characterEncoding = characterEncoding;
-	}
+  /**
+   * Uses the provided doctype, serialization, and character encoding.
+   * <p>
+   * Changes on request or response will not be detected and should not be done.  Please ensure doctype, serialization,
+   * and encoding are all set on the request and response.
+   * </p>
+   */
+  public EncodingContextEE(
+    Doctype doctype,
+    Serialization serialization,
+    Charset characterEncoding,
+    HttpServletResponse response
+  ) {
+    this.response = response;
+    this.doctype = doctype;
+    this.serialization = serialization;
+    this.characterEncoding = characterEncoding;
+  }
 
-	/**
-	 * The values for {@link Doctype}, {@link Serialization}, and {@link Charset} are only looked-up once and cached.
-	 * <p>
-	 * Changes on request or response will not be detected and should not be done.  Please ensure doctype, serialization,
-	 * and encoding are all set on the request and response.
-	 * </p>
-	 *
-	 * @see  DoctypeEE#get(javax.servlet.ServletContext, javax.servlet.ServletRequest)
-	 * @see  SerializationEE#get(javax.servlet.ServletContext, javax.servlet.http.HttpServletRequest)
-	 * @see  ServletResponse#getCharacterEncoding()
-	 * @see  Charset#forName(java.lang.String)
-	 */
-	public EncodingContextEE(ServletContext servletContext, HttpServletRequest request, HttpServletResponse response) {
-		this(
-			DoctypeEE.get(servletContext, request),
-			SerializationEE.get(servletContext, request),
-			Charset.forName(response.getCharacterEncoding()),
-			response
-		);
-	}
+  /**
+   * The values for {@link Doctype}, {@link Serialization}, and {@link Charset} are only looked-up once and cached.
+   * <p>
+   * Changes on request or response will not be detected and should not be done.  Please ensure doctype, serialization,
+   * and encoding are all set on the request and response.
+   * </p>
+   *
+   * @see  DoctypeEE#get(javax.servlet.ServletContext, javax.servlet.ServletRequest)
+   * @see  SerializationEE#get(javax.servlet.ServletContext, javax.servlet.http.HttpServletRequest)
+   * @see  ServletResponse#getCharacterEncoding()
+   * @see  Charset#forName(java.lang.String)
+   */
+  public EncodingContextEE(ServletContext servletContext, HttpServletRequest request, HttpServletResponse response) {
+    this(
+      DoctypeEE.get(servletContext, request),
+      SerializationEE.get(servletContext, request),
+      Charset.forName(response.getCharacterEncoding()),
+      response
+    );
+  }
 
-	/**
-	 * {@inheritDoc}
-	 * <p>
-	 * Encodes the URL via {@link URIEncoder#encodeURI(java.lang.String)} then {@link HttpServletResponse#encodeURL(java.lang.String)}.
-	 * </p>
-	 */
-	@Override
-	public String encodeURL(String url) {
-		return response.encodeURL(
-			URIEncoder.encodeURI(url)
-		);
-	}
+  /**
+   * {@inheritDoc}
+   * <p>
+   * Encodes the URL via {@link URIEncoder#encodeURI(java.lang.String)} then {@link HttpServletResponse#encodeURL(java.lang.String)}.
+   * </p>
+   */
+  @Override
+  public String encodeURL(String url) {
+    return response.encodeURL(
+      URIEncoder.encodeURI(url)
+    );
+  }
 
-	/**
-	 * {@inheritDoc}
-	 * <p>
-	 * Uses the cached value from construction time.
-	 * </p>
-	 */
-	@Override
-	public Doctype getDoctype() {
-		return doctype;
-	}
+  /**
+   * {@inheritDoc}
+   * <p>
+   * Uses the cached value from construction time.
+   * </p>
+   */
+  @Override
+  public Doctype getDoctype() {
+    return doctype;
+  }
 
-	/**
-	 * {@inheritDoc}
-	 * <p>
-	 * Uses the cached value from construction time.
-	 * </p>
-	 */
-	@Override
-	public Serialization getSerialization() {
-		return serialization;
-	}
+  /**
+   * {@inheritDoc}
+   * <p>
+   * Uses the cached value from construction time.
+   * </p>
+   */
+  @Override
+  public Serialization getSerialization() {
+    return serialization;
+  }
 
-	/**
-	 * {@inheritDoc}
-	 * <p>
-	 * Uses the cached value from construction time.
-	 * </p>
-	 */
-	@Override
-	public Charset getCharacterEncoding() {
-		return characterEncoding;
-	}
+  /**
+   * {@inheritDoc}
+   * <p>
+   * Uses the cached value from construction time.
+   * </p>
+   */
+  @Override
+  public Charset getCharacterEncoding() {
+    return characterEncoding;
+  }
 }
