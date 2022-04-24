@@ -72,7 +72,7 @@ public final class SerializationEE {
   }
 
   private static final ScopeEE.Request.Attribute<Serialization> REQUEST_ATTRIBUTE =
-    ScopeEE.REQUEST.attribute(Serialization.class.getName());
+      ScopeEE.REQUEST.attribute(Serialization.class.getName());
 
   /**
    * Registers the serialization in effect for the request.

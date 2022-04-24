@@ -61,7 +61,7 @@ public final class DoctypeEE {
   }
 
   private static final ScopeEE.Request.Attribute<Doctype> REQUEST_ATTRIBUTE =
-    ScopeEE.REQUEST.attribute(Doctype.class.getName());
+      ScopeEE.REQUEST.attribute(Doctype.class.getName());
 
   /**
    * Registers the doctype in effect for the request.

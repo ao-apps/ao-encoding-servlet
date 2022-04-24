@@ -53,10 +53,10 @@ public class EncodingContextEE implements EncodingContext {
    * </p>
    */
   public EncodingContextEE(
-    Doctype doctype,
-    Serialization serialization,
-    Charset characterEncoding,
-    HttpServletResponse response
+      Doctype doctype,
+      Serialization serialization,
+      Charset characterEncoding,
+      HttpServletResponse response
   ) {
     this.response = response;
     this.doctype = doctype;
@@ -78,10 +78,10 @@ public class EncodingContextEE implements EncodingContext {
    */
   public EncodingContextEE(ServletContext servletContext, HttpServletRequest request, HttpServletResponse response) {
     this(
-      DoctypeEE.get(servletContext, request),
-      SerializationEE.get(servletContext, request),
-      Charset.forName(response.getCharacterEncoding()),
-      response
+        DoctypeEE.get(servletContext, request),
+        SerializationEE.get(servletContext, request),
+        Charset.forName(response.getCharacterEncoding()),
+        response
     );
   }
 
@@ -94,7 +94,7 @@ public class EncodingContextEE implements EncodingContext {
   @Override
   public String encodeURL(String url) {
     return response.encodeURL(
-      URIEncoder.encodeURI(url)
+        URIEncoder.encodeURI(url)
     );
   }
 
