@@ -31,6 +31,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletRequest;
 
 /**
+ * Manages {@link Doctype} in a Servlet environment.
+ *
  * @author  AO Industries, Inc.
  */
 public final class DoctypeEE {

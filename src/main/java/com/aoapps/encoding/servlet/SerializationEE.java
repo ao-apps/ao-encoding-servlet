@@ -23,9 +23,10 @@
 
 package com.aoapps.encoding.servlet;
 
-import com.aoapps.encoding.Serialization;
 import static com.aoapps.encoding.Serialization.SGML;
 import static com.aoapps.encoding.Serialization.XML;
+
+import com.aoapps.encoding.Serialization;
 import com.aoapps.servlet.attribute.AttributeEE;
 import com.aoapps.servlet.attribute.ScopeEE;
 import javax.servlet.ServletContext;
@@ -33,6 +34,8 @@ import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
 /**
+ * Manages {@link Serialization} in a Servlet environment.
+ *
  * @author  AO Industries, Inc.
  */
 public final class SerializationEE {
@@ -52,7 +55,7 @@ public final class SerializationEE {
    * Determine if the content may be served as <code>application/xhtml+xml</code> by the
    * rules defined in <a href="http://www.w3.org/TR/xhtml-media-types/">http://www.w3.org/TR/xhtml-media-types/</a>
    * Default to <code>application/xhtml+xml</code> as discussed at
-   * <a href="https://web.archive.org/web/20080913043830/http://www.smackthemouse.com/xhtmlxml">http://www.smackthemouse.com/xhtmlxml</a>
+   * <a href="https://web.archive.org/web/20080913043830/http://www.smackthemouse.com/xhtmlxml">http://www.smackthemouse.com/xhtmlxml</a>.
    */
   public static Serialization getDefault(ServletContext servletContext, HttpServletRequest request) {
     String initParam = servletContext.getInitParameter(DEFAULT_INIT_PARAM);
