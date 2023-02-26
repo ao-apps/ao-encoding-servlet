@@ -23,7 +23,7 @@ High performance streaming character encoding in a Servlet environment.
 * [Project Home](https://oss.aoapps.com/encoding/servlet/)
 * [Changelog](https://oss.aoapps.com/encoding/servlet/changelog)
 * [API Docs](https://oss.aoapps.com/encoding/servlet/apidocs/)
-* [Maven Central Repository](https://search.maven.org/artifact/com.aoapps/ao-encoding-servlet)
+* [Maven Central Repository](https://central.sonatype.com/search?namespace=com.aoapps&q=a%3Aao-encoding-servlet)
 * [GitHub](https://github.com/ao-apps/ao-encoding-servlet)
 
 ## Contact Us
