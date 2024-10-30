@@ -1,6 +1,6 @@
 /*
  * ao-encoding-servlet - High performance streaming character encoding in a Servlet environment.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -87,10 +87,9 @@ public final class DoctypeEE {
   /**
    * Gets the doctype in effect for the request, or {@linkplain #getDefault(javax.servlet.ServletContext) the default}
    * when not yet {@linkplain #set(javax.servlet.ServletRequest, com.aoapps.encoding.Doctype) set}.
-   * <p>
-   * Once the default is resolved,
-   * {@linkplain #set(javax.servlet.ServletRequest, com.aoapps.encoding.Doctype) sets the request attribute}.
-   * </p>
+   *
+   * <p>Once the default is resolved,
+   * {@linkplain #set(javax.servlet.ServletRequest, com.aoapps.encoding.Doctype) sets the request attribute}.</p>
    */
   public static Doctype get(ServletContext servletContext, ServletRequest request) {
     AttributeEE.Request<Doctype> attribute = REQUEST_ATTRIBUTE.context(request);
