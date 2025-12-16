@@ -36,7 +36,7 @@ def upstreamProjects = [
   // Direct
   'encoding', // <groupId>com.aoapps</groupId><artifactId>ao-encoding</artifactId>
   'net-types', // <groupId>com.aoapps</groupId><artifactId>ao-net-types</artifactId>
-  'servlet-util', // <groupId>com.aoapps</groupId><artifactId>ao-servlet-util</artifactId>
+  'servlet-util-javaee', // <groupId>com.aoapps</groupId><artifactId>ao-servlet-util</artifactId>
   // No Jenkins: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId>
 
   // BOM
