@@ -1,6 +1,6 @@
 /*
  * ao-encoding-servlet - High performance streaming character encoding in a Servlet environment.
- * Copyright (C) 2016, 2019, 2020, 2021, 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2016, 2019, 2020, 2021, 2022, 2024, 2025, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -27,11 +27,11 @@ import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.EncodingContext;
 import com.aoapps.encoding.Serialization;
 import com.aoapps.net.URIEncoder;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.nio.charset.Charset;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * Encoding being done within a servlet context.
@@ -69,8 +69,8 @@ public class EncodingContextEE implements EncodingContext {
    * <p>Changes on request or response will not be detected and should not be done.  Please ensure doctype, serialization,
    * and encoding are all set on the request and response.</p>
    *
-   * @see  DoctypeEE#get(javax.servlet.ServletContext, javax.servlet.ServletRequest)
-   * @see  SerializationEE#get(javax.servlet.ServletContext, javax.servlet.http.HttpServletRequest)
+   * @see  DoctypeEE#get(jakarta.servlet.ServletContext, jakarta.servlet.ServletRequest)
+   * @see  SerializationEE#get(jakarta.servlet.ServletContext, jakarta.servlet.http.HttpServletRequest)
    * @see  ServletResponse#getCharacterEncoding()
    * @see  Charset#forName(java.lang.String)
    */

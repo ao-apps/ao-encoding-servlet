@@ -1,6 +1,6 @@
 /*
  * ao-encoding-servlet - High performance streaming character encoding in a Servlet environment.
- * Copyright (C) 2019, 2020, 2021, 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2024, 2025, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,9 +29,9 @@ import static com.aoapps.encoding.Serialization.XML;
 import com.aoapps.encoding.Serialization;
 import com.aoapps.servlet.attribute.AttributeEE;
 import com.aoapps.servlet.attribute.ScopeEE;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletRequest;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * Manages {@link Serialization} in a Servlet environment.
@@ -97,11 +97,11 @@ public final class SerializationEE {
   }
 
   /**
-   * Gets the serialization in effect for the request, or {@linkplain #getDefault(javax.servlet.ServletContext, javax.servlet.http.HttpServletRequest) the default}
-   * when not yet {@linkplain #set(javax.servlet.ServletRequest, com.aoapps.encoding.Serialization) set}.
+   * Gets the serialization in effect for the request, or {@linkplain #getDefault(jakarta.servlet.ServletContext, jakarta.servlet.http.HttpServletRequest) the default}
+   * when not yet {@linkplain #set(jakarta.servlet.ServletRequest, com.aoapps.encoding.Serialization) set}.
    *
    * <p>Once the default is resolved,
-   * {@linkplain #set(javax.servlet.ServletRequest, com.aoapps.encoding.Serialization) sets the request attribute}.</p>
+   * {@linkplain #set(jakarta.servlet.ServletRequest, com.aoapps.encoding.Serialization) sets the request attribute}.</p>
    */
   public static Serialization get(ServletContext servletContext, HttpServletRequest request) {
     AttributeEE.Request<Serialization> attribute = REQUEST_ATTRIBUTE.context(request);

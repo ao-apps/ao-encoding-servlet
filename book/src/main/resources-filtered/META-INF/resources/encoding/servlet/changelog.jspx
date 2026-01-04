@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 ao-encoding-servlet - High performance streaming character encoding in a Servlet environment.
-Copyright (C) 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2025  AO Industries, Inc.
+Copyright (C) 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2025, 2026  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -23,10 +23,10 @@ along with ao-encoding-servlet.  If not, see <https://www.gnu.org/licenses/>.
 -->
 <jsp:root
   xmlns:ao="https://oss.aoapps.com/taglib/"
-  xmlns:c="http://java.sun.com/jsp/jstl/core"
+  xmlns:c="jakarta.tags.core"
   xmlns:changelog="https://semanticcms.com/changelog/taglib/"
   xmlns:core="https://semanticcms.com/core/taglib/"
-  xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+  xmlns:fn="jakarta.tags.functions"
   xmlns:jsp="http://java.sun.com/JSP/Page"
   version="2.1"
 >
@@ -37,7 +37,7 @@ along with ao-encoding-servlet.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2016-10-29T20:12:35-05:00"
-    dateModified="2025-07-02T23:05:45Z"
+    dateModified="2025-12-30T13:42:11Z"
   >
     <c:set var="latestRelease" value="4.2.0" />
     <c:if test="${
@@ -53,6 +53,7 @@ along with ao-encoding-servlet.  If not, see <https://www.gnu.org/licenses/>.
         scmUrl="@{project.scm.url}"
       >
         <ul>
+          <li>Updated to <ao:a href="https://jakarta.ee/specifications/webprofile/10/">Jakarta EE Web Profile 10</ao:a> (Servlet 6.0, JSP 3.1, EL 5.0, and JSTL 3.0).</li>
           <li>Minimum Java version changed from 1.8 to 11.</li>
         </ul>
       </changelog:release>
@@ -130,7 +131,7 @@ along with ao-encoding-servlet.  If not, see <https://www.gnu.org/licenses/>.
           in order to provide current <code>Doctype</code> and <code>Serialization</code>.
         </li>
         <li>
-          New <ao:a rel="nofollow" href="@{javadoc.link.javaee}javax/servlet/ServletContext.html#getInitParameter(java.lang.String)">context-param</ao:a>
+          New <ao:a rel="nofollow" href="@{javadoc.link.javaee.7}javax/servlet/ServletContext.html#getInitParameter(java.lang.String)">context-param</ao:a>
           <code>com.aoindustries.encoding.Serialization.default</code>
           that allows an application to control the selection of HTML versus XHTML.
           Supports three values:
@@ -147,7 +148,7 @@ along with ao-encoding-servlet.  If not, see <https://www.gnu.org/licenses/>.
         <li>
           New method <code>DoctypeEE.getDefault(…)</code> that provides the default
           doctype for an application.  First checks
-          <ao:a rel="nofollow" href="@{javadoc.link.javaee}javax/servlet/ServletContext.html#getInitParameter(java.lang.String)">context-param</ao:a>
+          <ao:a rel="nofollow" href="@{javadoc.link.javaee.7}javax/servlet/ServletContext.html#getInitParameter(java.lang.String)">context-param</ao:a>
           <code>com.aoindustries.encoding.Doctype.default</code>,
           then defaults to "HTML5" when not present, empty, or "default".
         </li>
