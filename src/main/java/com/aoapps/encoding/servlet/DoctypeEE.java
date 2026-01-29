@@ -49,7 +49,7 @@ public final class DoctypeEE {
 
   /**
    * Determines the default doctype by first checking for {@linkplain ServletContext#getInitParameter(java.lang.String) context-param}
-   * of {@link #DEFAULT_INIT_PARAM}, then using {@link Doctype#DEFAULT} when unspecified or "default".
+   * of {@link DoctypeEE#DEFAULT_INIT_PARAM}, then using {@link Doctype#DEFAULT} when unspecified or "default".
    */
   public static Doctype getDefault(ServletContext servletContext) {
     String initParam = servletContext.getInitParameter(DEFAULT_INIT_PARAM);
@@ -85,11 +85,11 @@ public final class DoctypeEE {
   }
 
   /**
-   * Gets the doctype in effect for the request, or {@linkplain #getDefault(jakarta.servlet.ServletContext) the default}
-   * when not yet {@linkplain #set(jakarta.servlet.ServletRequest, com.aoapps.encoding.Doctype) set}.
+   * Gets the doctype in effect for the request, or {@linkplain DoctypeEE#getDefault(jakarta.servlet.ServletContext) the default}
+   * when not yet {@linkplain DoctypeEE#set(jakarta.servlet.ServletRequest, com.aoapps.encoding.Doctype) set}.
    *
    * <p>Once the default is resolved,
-   * {@linkplain #set(jakarta.servlet.ServletRequest, com.aoapps.encoding.Doctype) sets the request attribute}.</p>
+   * {@linkplain DoctypeEE#set(jakarta.servlet.ServletRequest, com.aoapps.encoding.Doctype) sets the request attribute}.</p>
    */
   public static Doctype get(ServletContext servletContext, ServletRequest request) {
     AttributeEE.Request<Doctype> attribute = REQUEST_ATTRIBUTE.context(request);

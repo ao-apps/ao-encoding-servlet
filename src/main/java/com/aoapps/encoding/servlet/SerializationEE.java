@@ -97,11 +97,11 @@ public final class SerializationEE {
   }
 
   /**
-   * Gets the serialization in effect for the request, or {@linkplain #getDefault(jakarta.servlet.ServletContext, jakarta.servlet.http.HttpServletRequest) the default}
-   * when not yet {@linkplain #set(jakarta.servlet.ServletRequest, com.aoapps.encoding.Serialization) set}.
+   * Gets the serialization in effect for the request, or {@linkplain SerializationEE#getDefault(jakarta.servlet.ServletContext, jakarta.servlet.http.HttpServletRequest) the default}
+   * when not yet {@linkplain SerializationEE#set(jakarta.servlet.ServletRequest, com.aoapps.encoding.Serialization) set}.
    *
    * <p>Once the default is resolved,
-   * {@linkplain #set(jakarta.servlet.ServletRequest, com.aoapps.encoding.Serialization) sets the request attribute}.</p>
+   * {@linkplain SerializationEE#set(jakarta.servlet.ServletRequest, com.aoapps.encoding.Serialization) sets the request attribute}.</p>
    */
   public static Serialization get(ServletContext servletContext, HttpServletRequest request) {
     AttributeEE.Request<Serialization> attribute = REQUEST_ATTRIBUTE.context(request);
