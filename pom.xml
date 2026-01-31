@@ -29,12 +29,12 @@ along with ao-encoding-servlet.  If not, see <https://www.gnu.org/licenses/>.
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
-  <groupId>com.aoapps</groupId><artifactId>ao-encoding-servlet</artifactId><version>5.0.0-SNAPSHOT</version>
+  <groupId>com.aoapps</groupId><artifactId>ao-encoding-servlet</artifactId><version>5.0.0</version>
   <packaging>jar</packaging>
 
   <properties>
     <!-- Must be set to ${git.commit.time} for snapshots or ISO 8601 timestamp for releases. -->
-    <project.build.outputTimestamp>${git.commit.time}</project.build.outputTimestamp>
+    <project.build.outputTimestamp>2026-01-31T07:11:58Z</project.build.outputTimestamp>
     <module.name>com.aoapps.encoding.servlet</module.name>
 
     <javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://oss.aoapps.com/">AO OSS</a>
@@ -79,7 +79,7 @@ along with ao-encoding-servlet.  If not, see <https://www.gnu.org/licenses/>.
     <connection>scm:git:git://github.com/ao-apps/ao-encoding-servlet.git</connection>
     <developerConnection>scm:git:git@github.com:ao-apps/ao-encoding-servlet.git</developerConnection>
     <url>https://github.com/ao-apps/ao-encoding-servlet</url>
-    <tag>HEAD</tag>
+    <tag>ao-encoding-servlet-5.0.0</tag>
   </scm>
 
   <issueManagement>
