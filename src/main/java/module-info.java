@@ -21,10 +21,11 @@
  * along with ao-encoding-servlet.  If not, see <https://www.gnu.org/licenses/>.
  */
 module com.aoapps.encoding.servlet {
-  exports com.aoapps.encoding.servlet;
   // Direct
   requires com.aoapps.encoding; // <groupId>com.aoapps</groupId><artifactId>ao-encoding</artifactId>
   requires com.aoapps.net.types; // <groupId>com.aoapps</groupId><artifactId>ao-net-types</artifactId>
   requires com.aoapps.servlet.util; // <groupId>com.aoapps</groupId><artifactId>ao-servlet-util</artifactId>
   requires jakarta.servlet; // <groupId>jakarta.servlet</groupId><artifactId>jakarta.servlet-api</artifactId>
+
+  exports com.aoapps.encoding.servlet;
 }
