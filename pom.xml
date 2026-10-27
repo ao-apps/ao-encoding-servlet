@@ -215,6 +215,7 @@ along with ao-encoding-servlet.  If not, see <https://www.gnu.org/licenses/>.
                   javax.servlet-api-3.1.0.jar
                 -->
                 <Automatic-Module-Name>${module.name}</Automatic-Module-Name>
+                <Include-Resource>{maven-resources}</Include-Resource>
                 <Private-Package>!.</Private-Package>
               </instructions>
             </configuration>
