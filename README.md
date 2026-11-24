@@ -17,7 +17,7 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?branch=javaee&project=com.aoapps%3Aao-encoding-servlet&metric=sqale_rating)](https://sonarcloud.io/component_measures?branch=javaee&id=com.aoapps%3Aao-encoding-servlet&metric=Maintainability)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?branch=javaee&project=com.aoapps%3Aao-encoding-servlet&metric=coverage)](https://sonarcloud.io/component_measures?branch=javaee&id=com.aoapps%3Aao-encoding-servlet&metric=Coverage)
 
-High performance streaming character encoding in a Servlet environment.
+High performance, composable, streaming character encoding in a Servlet environment.
 
 ## Project Links
 * [Project Home](https://oss.aoapps.com/encoding/servlet/)
