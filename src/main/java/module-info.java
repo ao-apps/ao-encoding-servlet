@@ -1,5 +1,5 @@
 /*
- * ao-encoding-servlet - High performance streaming character encoding in a Servlet environment.
+ * ao-encoding-servlet - High performance, composable, streaming character encoding in a Servlet environment.
  * Copyright (C) 2021, 2022, 2025, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir

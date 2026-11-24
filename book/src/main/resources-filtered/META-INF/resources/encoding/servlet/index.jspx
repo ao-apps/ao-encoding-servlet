@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-ao-encoding-servlet - High performance streaming character encoding in a Servlet environment.
+ao-encoding-servlet - High performance, composable, streaming character encoding in a Servlet environment.
 Copyright (C) 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2025, 2026  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
@@ -34,7 +34,7 @@ along with ao-encoding-servlet.  If not, see <https://www.gnu.org/licenses/>.
     title="@{documented.name}"
     description="@{documented.description}"
     datePublished="2016-10-16T22:58:00-05:00"
-    dateModified="2026-01-18T16:26:33Z"
+    dateModified="2026-11-24T16:34:40Z"
   >
     <core:child page="changelog.jspx" />
     <core:child page="apidocs/index.jspx" />
